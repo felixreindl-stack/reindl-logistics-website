@@ -1,0 +1,17 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64" role="img" aria-label="RLE – Reindl Logistics Enterprise">
+  <!-- RLE-Logo (Nutzer 21.11.2026): Paket mit den Initialen auf der Vorderseite, aus dem eine Route nach vorne läuft -->
+  <rect width="64" height="64" rx="14" fill="#2f6f62"/>
+  <g fill="none" stroke="#ffffff" stroke-width="3" stroke-linejoin="round" stroke-linecap="round">
+    <!-- Paket: Vorderseite, Deckel, rechte Seite -->
+    <path d="M8 23 L36 23 L36 50 L8 50 Z"/>
+    <path d="M8 23 L17 14 L45 14 L36 23"/>
+    <path d="M45 14 L45 41 L36 50"/>
+    <!-- Klebeband auf dem Deckel -->
+    <path d="M22 23 L31 14" stroke-width="2.4" opacity=".7"/>
+    <!-- Route / Pfeil -->
+    <path d="M45 41 L55 41"/>
+    <path d="M51 37 L55 41 L51 45"/>
+  </g>
+  <!-- Initialen auf der Vorderseite -->
+  <text x="22" y="41.2" text-anchor="middle" fill="#ffffff" font-family="Segoe UI, Arial, Helvetica, sans-serif" font-size="11.5" font-weight="800" letter-spacing=".4">RLE</text>
+</svg>

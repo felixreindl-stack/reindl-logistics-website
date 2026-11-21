@@ -1,0 +1,645 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="icon" type="image/svg+xml" href="logo.svg">
+<title>Reindl Logistics Enterprise – Amazon Prep &amp; Fulfillment aus Hörsching</title>
+<meta name="description" content="Prep-Center in Hörsching, Oberösterreich: FNSKU-Etikettierung, Kontrolle, Umpacken und Versand an Amazon sowie Lagerung und Versand für Ihren Onlineshop. Abrechnung je SKU nach Staffelpreisen.">
+<meta property="og:title" content="Reindl Logistics Enterprise – Amazon Prep &amp; Fulfillment">
+<meta property="og:description" content="Etikettiert, geprüft, verpackt und an Amazon verschickt. Aus Hörsching, Oberösterreich. Tägliche Abholung durch Post, DPD, GLS und UPS.">
+<meta property="og:type" content="website">
+<meta property="og:locale" content="de_AT">
+<style>
+  :root{
+    --paper:#f5f1e8; --paper-2:#ebe4d4; --card:#fffdf8;
+    --ink:#15241f; --muted:#59615b; --line:#d9d0bd;
+    --green:#2f6f62; --green-d:#1d4a40; --green-l:#dbe8e3;
+    --kraft:#c8925a; --kraft-d:#a8743f; --tape:#e8c27a;
+    --serif:"Iowan Old Style","Palatino Linotype","Book Antiqua",Palatino,Georgia,serif;
+    --sans:system-ui,-apple-system,"Segoe UI",Roboto,Arial,sans-serif;
+    --mono:ui-monospace,"Cascadia Mono",Consolas,"SFMono-Regular",Menlo,monospace;
+  }
+  *{box-sizing:border-box}
+  html{scroll-behavior:smooth}
+  body{margin:0;font-family:var(--sans);color:var(--ink);background:var(--paper);line-height:1.6;font-size:17px}
+  img,svg{max-width:100%}
+  a{color:var(--green-d)}
+  .wrap{max-width:1100px;margin:0 auto;padding:0 20px}
+  .mono{font-family:var(--mono);font-size:.78em;letter-spacing:.06em;text-transform:uppercase}
+
+  /* Header */
+  header{position:sticky;top:0;z-index:10;background:rgba(245,241,232,.94);backdrop-filter:blur(6px);border-bottom:1px solid var(--line)}
+  header .wrap{display:flex;align-items:center;justify-content:space-between;height:64px;gap:16px}
+  .logo{display:flex;align-items:center;gap:10px;color:var(--ink);text-decoration:none;font-weight:700;white-space:nowrap}
+  .logo img{display:block;border-radius:9px}
+  .logo small{display:block;font-family:var(--mono);font-weight:400;font-size:11px;letter-spacing:.08em;color:var(--muted);text-transform:uppercase;line-height:1.2}
+  .logo b{display:block;line-height:1.2}
+  nav{display:flex;align-items:center;gap:22px}
+  nav a{color:var(--muted);text-decoration:none;font-size:15px}
+  nav a:hover{color:var(--ink)}
+  nav a.nav-cta{color:#fff;background:var(--ink);padding:8px 14px;border-radius:6px}
+  nav a.nav-cta:hover{background:var(--green-d);color:#fff}
+  @media(max-width:820px){nav a:not(.nav-cta){display:none}}
+  @media(max-width:420px){.logo small{display:none}.logo{white-space:normal}.logo b{font-size:15px;max-width:150px}nav a.nav-cta{padding:8px 12px}}
+
+  /* Hero */
+  .hero{padding:64px 0 0}
+  .hero-grid{display:grid;grid-template-columns:1.15fr .85fr;gap:48px;align-items:center}
+  .kicker{color:var(--green);margin:0 0 18px}
+  h1,h2,h3{font-family:var(--serif);font-weight:600;letter-spacing:-.01em}
+  h1{font-size:clamp(36px,5.6vw,62px);line-height:1.04;margin:0 0 22px}
+  h1 em{font-style:italic;color:var(--green)}
+  .lead{font-size:19px;color:var(--muted);max-width:50ch;margin:0 0 30px}
+  .cta{display:flex;flex-wrap:wrap;gap:22px;align-items:center}
+  .btn{display:inline-block;background:var(--green);color:#fff;padding:14px 24px;border-radius:6px;text-decoration:none;font-weight:600;border:0;font-size:16px;font-family:var(--sans);cursor:pointer;box-shadow:0 2px 0 var(--green-d)}
+  .btn:hover{background:var(--green-d)}
+  .textlink{color:var(--ink);font-weight:600;text-decoration:none;border-bottom:2px solid var(--tape)}
+  .hero-fig{margin:0}
+  .hero-fig svg{display:block;width:100%;height:auto}
+  @media(max-width:860px){.hero-grid{grid-template-columns:1fr}.hero-fig{max-width:440px}}
+
+  .facts{display:grid;grid-template-columns:repeat(3,1fr);margin-top:56px;border-top:1px solid var(--ink)}
+  .facts div{padding:18px 22px 22px 0}
+  .facts div + div{padding-left:22px;border-left:1px solid var(--line)}
+  .facts strong{display:block;font-family:var(--serif);font-size:20px;font-weight:600}
+  .facts span{color:var(--muted);font-size:15px}
+  @media(max-width:760px){.facts{grid-template-columns:1fr}.facts div + div{padding-left:0;border-left:0;border-top:1px solid var(--line)}}
+
+  /* Sections */
+  section{padding:88px 0}
+  .sec-head{display:grid;grid-template-columns:200px 1fr;gap:32px;margin-bottom:44px;align-items:baseline}
+  .sec-head .mono{color:var(--green);margin:0}
+  h2{font-size:clamp(28px,3.6vw,40px);line-height:1.12;margin:0;max-width:22ch}
+  .sec-head p.intro{grid-column:2;color:var(--muted);margin:12px 0 0;max-width:60ch}
+  @media(max-width:760px){.sec-head{grid-template-columns:1fr;gap:10px}.sec-head p.intro{grid-column:1}}
+  .dark{background:var(--ink);color:#e9efe9}
+  .dark h2,.dark h3{color:#fff}
+  .dark .sec-head .mono{color:var(--tape)}
+  .dark .sec-head p.intro{color:#b7c3bd}
+  .band{background:var(--paper-2)}
+
+  /* Leistungen */
+  .services{list-style:none;margin:0;padding:0;border-top:1px solid var(--ink)}
+  .services li{display:grid;grid-template-columns:200px 1fr 1fr;gap:32px;padding:28px 0;border-bottom:1px solid var(--line)}
+  .services .num{font-family:var(--mono);font-size:13px;color:var(--muted);padding-top:6px}
+  .services h3{font-size:25px;margin:0}
+  .services p{margin:0 0 12px;color:var(--muted)}
+  .tags{display:flex;flex-wrap:wrap;gap:6px;margin:0;padding:0;list-style:none}
+  .tags li{all:unset;font-family:var(--mono);font-size:12px;border:1px solid var(--line);background:var(--card);padding:3px 8px;border-radius:4px;color:var(--ink)}
+  @media(max-width:860px){.services li{grid-template-columns:1fr;gap:8px}}
+  .workbench{margin:56px 0 0}
+  .workbench svg{display:block;width:100%;height:auto;border-radius:10px}
+  figcaption{font-family:var(--mono);font-size:12px;color:var(--muted);margin-top:8px;letter-spacing:.04em}
+
+  /* Preise */
+  .price-grid{display:grid;grid-template-columns:1.25fr .75fr;gap:40px;align-items:start}
+  @media(max-width:900px){.price-grid{grid-template-columns:1fr}}
+  .price-grid > *{min-width:0}
+  @media(max-width:560px){
+    .invoice{padding:22px 18px 18px}
+    .invoice thead{display:none}
+    .invoice tr{display:grid;grid-template-columns:36px 1fr;border-top:1px dashed var(--line)}
+    .invoice td{border-top:0;padding:10px 6px 0 0}
+    .invoice td.how{grid-column:2;padding:4px 0 12px}
+  }
+  .invoice{background:var(--card);color:var(--ink);border-radius:4px;padding:28px 28px 22px;box-shadow:0 18px 40px rgba(0,0,0,.25);transform:rotate(-.6deg);position:relative}
+  .invoice::before{content:"";position:absolute;top:-12px;left:50%;width:110px;height:26px;margin-left:-55px;background:var(--tape);opacity:.85;transform:rotate(2deg)}
+  .inv-top{display:flex;justify-content:space-between;gap:12px;border-bottom:2px solid var(--ink);padding-bottom:12px;margin-bottom:6px;font-family:var(--mono);font-size:12px;letter-spacing:.06em;text-transform:uppercase}
+  .invoice table{width:100%;border-collapse:collapse;font-size:15px}
+  .invoice th{font-family:var(--mono);font-size:11px;letter-spacing:.06em;text-transform:uppercase;color:var(--muted);text-align:left;font-weight:400;padding:10px 8px 6px 0}
+  .invoice td{padding:12px 8px 12px 0;border-top:1px dashed var(--line);vertical-align:top}
+  .invoice td:first-child{font-family:var(--mono);color:var(--muted);width:44px}
+  .invoice td strong{display:block}
+  .invoice td.how{color:var(--muted);font-size:14px}
+  .inv-note{margin:14px 0 0;padding-top:12px;border-top:2px solid var(--ink);font-size:14px}
+  .side h3{font-size:22px;margin:0 0 10px}
+  .side p{color:#b7c3bd;margin:0 0 18px}
+  .side svg{display:block;width:100%;height:auto;margin-bottom:18px}
+  .not-billed{list-style:none;padding:0;margin:0;font-size:15px}
+  .not-billed li{padding:6px 0;border-top:1px solid rgba(255,255,255,.12);color:#dfe7e2}
+  .not-billed li::before{content:"inklusive  ";font-family:var(--mono);font-size:11px;letter-spacing:.06em;color:var(--tape);text-transform:uppercase}
+
+  /* Ablauf */
+  .tracks{display:grid;grid-template-columns:1fr 1fr;gap:48px}
+  @media(max-width:820px){.tracks{grid-template-columns:1fr}}
+  .track h3{font-size:24px;margin:0 0 4px}
+  .track > p{color:var(--muted);margin:0 0 22px;font-size:15px}
+  .track ol{list-style:none;margin:0;padding:0;position:relative}
+  .track ol::before{content:"";position:absolute;left:17px;top:10px;bottom:10px;border-left:2px dashed var(--kraft)}
+  .track li{position:relative;padding:0 0 22px 56px}
+  .track li::before{content:attr(data-n);position:absolute;left:0;top:0;width:36px;height:36px;border-radius:50%;background:var(--paper);border:2px solid var(--ink);font-family:var(--mono);font-size:13px;display:grid;place-items:center}
+  .band .track li::before{background:var(--paper-2)}
+  .track strong{display:block;padding-top:5px}
+  .track span{color:var(--muted);font-size:15px}
+
+  /* Standort */
+  .loc-grid{display:grid;grid-template-columns:.9fr 1.1fr;gap:48px;align-items:center}
+  @media(max-width:860px){.loc-grid{grid-template-columns:1fr}}
+  .loc-grid figure{margin:0}
+  .loc-grid svg{display:block;width:100%;height:auto}
+  .loc-list{list-style:none;padding:0;margin:24px 0 0}
+  .loc-list li{display:flex;gap:14px;padding:10px 0;border-top:1px solid var(--line)}
+  .loc-list .mono{color:var(--green);min-width:86px;padding-top:3px}
+
+  /* FAQ */
+  .faq{border-top:1px solid var(--ink);max-width:820px}
+  details{border-bottom:1px solid var(--line);padding:18px 0}
+  summary{cursor:pointer;font-family:var(--serif);font-size:20px;font-weight:600;list-style:none;display:flex;justify-content:space-between;gap:20px}
+  summary::-webkit-details-marker{display:none}
+  summary::after{content:"+";font-family:var(--mono);font-size:20px;color:var(--green);transition:transform .2s}
+  details[open] summary::after{transform:rotate(45deg)}
+  details p{color:var(--muted);margin:10px 0 0;max-width:65ch}
+
+  /* Kontakt */
+  .contact-grid{display:grid;grid-template-columns:.8fr 1.2fr;gap:56px}
+  @media(max-width:860px){.contact-grid{grid-template-columns:1fr;gap:32px}}
+  .contact-info p{color:#b7c3bd}
+  .contact-info a{color:#fff}
+  .contact-info dl{margin:28px 0 0;display:grid;grid-template-columns:auto 1fr;gap:10px 18px}
+  .contact-info dt{font-family:var(--mono);font-size:12px;letter-spacing:.06em;text-transform:uppercase;color:var(--tape);padding-top:3px}
+  .contact-info dd{margin:0}
+  form{display:grid;gap:16px;background:var(--card);color:var(--ink);padding:28px;border-radius:6px}
+  .row2{display:grid;grid-template-columns:1fr 1fr;gap:16px}
+  @media(max-width:560px){.row2{grid-template-columns:1fr}}
+  label{font-size:14px;font-weight:600;display:grid;gap:6px}
+  input,textarea{font:inherit;font-size:16px;padding:11px 12px;border:1px solid #c9bfa9;border-radius:5px;background:#fff;width:100%;color:var(--ink)}
+  input:focus,textarea:focus{outline:2px solid var(--green);outline-offset:1px;border-color:var(--green)}
+  textarea{min-height:140px;resize:vertical}
+  .hp{position:absolute;left:-9999px}
+  .small{font-size:13px;color:var(--muted);margin:0}
+  .form-status{font-size:15px;margin:0;font-weight:600}
+  .form-status.ok{color:var(--green)}
+  .form-status.err{color:#a33c2b}
+
+  /* Rechtliches */
+  .legal-grid{display:grid;grid-template-columns:1fr 1.4fr;gap:56px}
+  @media(max-width:860px){.legal-grid{grid-template-columns:1fr}}
+  .legal h2{font-size:26px;margin:0 0 16px}
+  .legal h3{font-family:var(--sans);font-size:15px;font-weight:700;margin:20px 0 4px}
+  .legal p{font-size:15px;color:#33403b;margin:0 0 10px}
+  footer{border-top:1px solid var(--line);padding:28px 0;font-size:14px;color:var(--muted)}
+  footer .wrap{display:flex;flex-wrap:wrap;justify-content:space-between;gap:12px}
+  footer a{color:var(--muted)}
+</style>
+</head>
+<body id="top">
+
+<header>
+  <div class="wrap">
+    <a class="logo" href="#top"><img src="logo.svg" alt="" width="40" height="40"><span><b>Reindl Logistics Enterprise</b><small>Prep-Center · Hörsching</small></span></a>
+    <nav aria-label="Hauptnavigation">
+      <a href="#leistungen">Leistungen</a>
+      <a href="#preise">Preise</a>
+      <a href="#ablauf">Ablauf</a>
+      <a href="#standort">Standort</a>
+      <a href="#faq">FAQ</a>
+      <a class="nav-cta" href="#kontakt">Anfrage</a>
+    </nav>
+  </div>
+</header>
+
+<main>
+  <!-- HERO -->
+  <section class="hero" style="padding-bottom:0">
+    <div class="wrap">
+      <div class="hero-grid">
+        <div>
+          <p class="kicker mono">Amazon Prep &amp; Fulfillment · Oberösterreich</p>
+          <h1>Ihre Ware kommt bei uns an. <em>Bei Amazon kommt sie richtig an.</em></h1>
+          <p class="lead">Wir etikettieren, prüfen und packen Ihre Ware um und schicken sie an die Amazon-Logistikzentren. Für Ihren eigenen Onlineshop lagern wir sie und versenden die Bestellungen direkt an Ihre Kunden.</p>
+          <div class="cta">
+            <a class="btn" href="#kontakt">Angebot anfragen</a>
+            <a class="textlink" href="#preise">So rechnen wir ab →</a>
+          </div>
+        </div>
+
+        <!-- Illustration: Karton mit FBA-Etikett und Prüfstempel -->
+        <figure class="hero-fig">
+          <svg viewBox="0 0 440 420" role="img" aria-label="Illustration: Versandkarton mit FNSKU-Etikett, Checkliste und Stempel „geprüft“">
+            <!-- Schatten -->
+            <ellipse cx="220" cy="392" rx="190" ry="16" fill="#15241f" opacity=".12"/>
+            <!-- Karton: Deckel, Seite, Front -->
+            <path d="M40 120 L110 70 L400 70 L330 120 Z" fill="#dcae78"/>
+            <path d="M330 120 L400 70 L400 330 L330 385 Z" fill="#a8743f"/>
+            <rect x="40" y="120" width="290" height="265" fill="#c8925a"/>
+            <!-- Klebeband -->
+            <path d="M170 120 L240 70 L278 70 L208 120 Z" fill="#e8c27a" opacity=".9"/>
+            <rect x="170" y="120" width="38" height="46" fill="#e8c27a" opacity=".9"/>
+            <!-- Kartonfalz-Linien -->
+            <path d="M40 120 L330 120" stroke="#a8743f" stroke-width="2"/>
+            <!-- Etikett -->
+            <g transform="rotate(-3 185 260)">
+              <rect x="72" y="180" width="228" height="168" rx="4" fill="#fffdf8"/>
+              <rect x="72" y="180" width="228" height="26" fill="#15241f"/>
+              <text x="84" y="198" fill="#fffdf8" font-family="Consolas, monospace" font-size="12" letter-spacing="1.5">RLE · PREP · FBA</text>
+              <text x="288" y="198" fill="#e8c27a" font-family="Consolas, monospace" font-size="12" text-anchor="end">1/4</text>
+              <!-- Barcode -->
+              <g fill="#15241f">
+                <rect x="86" y="218" width="3" height="52"/><rect x="92" y="218" width="1.5" height="52"/><rect x="96" y="218" width="4" height="52"/>
+                <rect x="103" y="218" width="1.5" height="52"/><rect x="107" y="218" width="2.5" height="52"/><rect x="113" y="218" width="1.5" height="52"/>
+                <rect x="117" y="218" width="4" height="52"/><rect x="124" y="218" width="2" height="52"/><rect x="129" y="218" width="1.5" height="52"/>
+                <rect x="133" y="218" width="3" height="52"/><rect x="139" y="218" width="1.5" height="52"/><rect x="143" y="218" width="4.5" height="52"/>
+                <rect x="150" y="218" width="1.5" height="52"/><rect x="154" y="218" width="2.5" height="52"/><rect x="160" y="218" width="1.5" height="52"/>
+                <rect x="164" y="218" width="3.5" height="52"/><rect x="171" y="218" width="1.5" height="52"/><rect x="175" y="218" width="2" height="52"/>
+                <rect x="180" y="218" width="4" height="52"/><rect x="187" y="218" width="1.5" height="52"/><rect x="191" y="218" width="2.5" height="52"/>
+                <rect x="197" y="218" width="1.5" height="52"/><rect x="201" y="218" width="3" height="52"/><rect x="207" y="218" width="1.5" height="52"/>
+                <rect x="211" y="218" width="4" height="52"/><rect x="218" y="218" width="2" height="52"/><rect x="223" y="218" width="1.5" height="52"/>
+                <rect x="227" y="218" width="3" height="52"/>
+              </g>
+              <text x="86" y="286" fill="#15241f" font-family="Consolas, monospace" font-size="12" letter-spacing="1">X00·FNSKU·0417</text>
+              <!-- Checkliste -->
+              <g font-family="Segoe UI, Arial, sans-serif" font-size="11" fill="#15241f">
+                <g stroke="#2f6f62" stroke-width="2.2" fill="none" stroke-linecap="round" stroke-linejoin="round">
+                  <path d="M86 305 l4 4 l8 -9"/><path d="M86 323 l4 4 l8 -9"/><path d="M204 305 l4 4 l8 -9"/><path d="M204 323 l4 4 l8 -9"/>
+                </g>
+                <text x="102" y="310">Menge geprüft</text>
+                <text x="102" y="328">Polybag + Hinweis</text>
+                <text x="220" y="310">Etikett lesbar</text>
+                <text x="220" y="328">Gewicht ok</text>
+              </g>
+            </g>
+            <!-- Stempel "geprüft" -->
+            <g transform="rotate(-14 330 150)" opacity=".92">
+              <circle cx="330" cy="150" r="54" fill="none" stroke="#2f6f62" stroke-width="4"/>
+              <circle cx="330" cy="150" r="45" fill="none" stroke="#2f6f62" stroke-width="1.5"/>
+              <text x="330" y="146" text-anchor="middle" fill="#2f6f62" font-family="Georgia, serif" font-size="15" font-weight="700" letter-spacing="1">GEPRÜFT</text>
+              <text x="330" y="166" text-anchor="middle" fill="#2f6f62" font-family="Consolas, monospace" font-size="10" letter-spacing="2">HÖRSCHING</text>
+            </g>
+            <!-- Route aus dem Karton -->
+            <path d="M345 300 C385 300 400 330 420 330" fill="none" stroke="#15241f" stroke-width="3" stroke-dasharray="3 9" stroke-linecap="round"/>
+          </svg>
+        </figure>
+      </div>
+
+      <div class="facts">
+        <div><strong>Persönlich erreichbar</strong><span>Sie sprechen direkt mit dem Inhaber – auch abends und am Wochenende.</span></div>
+        <div><strong>Erst melden, dann weiter</strong><span>Stimmen Menge oder Zustand nicht, hören Sie von uns, bevor gearbeitet wird.</span></div>
+        <div><strong>Täglich Abholung</strong><span>Post, DPD, GLS und UPS holen täglich direkt bei uns in Hörsching ab.</span></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- LEISTUNGEN -->
+  <section id="leistungen">
+    <div class="wrap">
+      <div class="sec-head">
+        <p class="mono">01 · Leistungen</p>
+        <h2>Was zwischen Ihrem Lieferanten und Amazon passiert</h2>
+      </div>
+
+      <ul class="services">
+        <li>
+          <span class="num">01</span>
+          <h3>Amazon Prep</h3>
+          <div>
+            <p>Wir machen Ihre Ware FBA-fertig, nach den aktuellen Vorgaben von Amazon.</p>
+            <ul class="tags"><li>FNSKU-Etiketten</li><li>Wareneingangskontrolle</li><li>Umpacken</li><li>Bundles &amp; Sets</li><li>Polybags mit Warnhinweis</li><li>Schutzverpackung</li></ul>
+          </div>
+        </li>
+        <li>
+          <span class="num">02</span>
+          <h3>Versand an Amazon</h3>
+          <div>
+            <p>Wir packen die Kartons nach Amazon-Vorgaben, etikettieren sie und übergeben sie an den Paketdienst oder die Spedition, die zum Logistikzentrum fährt.</p>
+            <ul class="tags"><li>Kartonetiketten</li><li>Gewichtsgrenzen</li><li>Paket oder Palette</li><li>tägliche Abholung</li></ul>
+          </div>
+        </li>
+        <li>
+          <span class="num">03</span>
+          <h3>Shop-Fulfillment</h3>
+          <div>
+            <p>Für Bestellungen außerhalb von Amazon, etwa aus Ihrem eigenen Onlineshop: Wir lagern Ihre Ware, kommissionieren und versenden direkt an Ihre Kunden.</p>
+            <ul class="tags"><li>Lagerung</li><li>Kommissionierung</li><li>Versand mit Post, DPD, GLS oder UPS</li></ul>
+          </div>
+        </li>
+        <li>
+          <span class="num">04</span>
+          <h3>Retouren</h3>
+          <div>
+            <p>Zurückgesendete Ware wird geprüft und mit Fotos dokumentiert. Was danach mit ihr passiert, entscheiden Sie: einlagern, aufbereiten oder aussortieren.</p>
+            <ul class="tags"><li>Sichtprüfung</li><li>Fotodokumentation</li><li>Rücklagerung</li></ul>
+          </div>
+        </li>
+      </ul>
+
+      <!-- Illustration: Packtisch -->
+      <figure class="workbench">
+        <svg viewBox="0 0 1060 300" role="img" aria-label="Illustration: Packtisch mit Etikettendrucker, Handscanner, Klebebandabroller und gestapelten Kartons">
+          <rect width="1060" height="300" fill="#ebe4d4"/>
+          <!-- Regal im Hintergrund -->
+          <g stroke="#c9bfa9" stroke-width="4" fill="none">
+            <path d="M640 20 V230 M1020 20 V230 M640 80 H1020 M640 150 H1020"/>
+          </g>
+          <g>
+            <rect x="660" y="40" width="70" height="40" fill="#c8925a"/><rect x="740" y="50" width="56" height="30" fill="#dcae78"/>
+            <rect x="806" y="34" width="84" height="46" fill="#c8925a"/><rect x="900" y="46" width="60" height="34" fill="#a8743f"/>
+            <rect x="660" y="104" width="96" height="46" fill="#dcae78"/><rect x="766" y="112" width="64" height="38" fill="#c8925a"/>
+            <rect x="840" y="98" width="72" height="52" fill="#a8743f"/><rect x="922" y="110" width="80" height="40" fill="#dcae78"/>
+            <g fill="#fffdf8"><rect x="676" y="52" width="26" height="16"/><rect x="826" y="48" width="30" height="16"/><rect x="680" y="118" width="30" height="16"/><rect x="856" y="114" width="26" height="16"/></g>
+          </g>
+          <!-- Tisch -->
+          <rect x="30" y="228" width="1000" height="16" fill="#15241f"/>
+          <rect x="60" y="244" width="14" height="56" fill="#15241f"/><rect x="986" y="244" width="14" height="56" fill="#15241f"/>
+          <!-- Etikettendrucker -->
+          <rect x="70" y="150" width="150" height="78" rx="10" fill="#2f6f62"/>
+          <rect x="70" y="150" width="150" height="22" rx="10" fill="#1d4a40"/>
+          <rect x="98" y="118" width="94" height="40" fill="#fffdf8"/>
+          <g fill="#15241f"><rect x="106" y="126" width="2" height="18"/><rect x="111" y="126" width="1" height="18"/><rect x="114" y="126" width="3" height="18"/><rect x="120" y="126" width="1" height="18"/><rect x="123" y="126" width="2" height="18"/><rect x="128" y="126" width="1" height="18"/><rect x="131" y="126" width="3" height="18"/><rect x="137" y="126" width="1" height="18"/><rect x="140" y="126" width="2" height="18"/></g>
+          <rect x="150" y="128" width="34" height="4" fill="#c9bfa9"/><rect x="150" y="136" width="24" height="4" fill="#c9bfa9"/>
+          <circle cx="196" cy="200" r="7" fill="#e8c27a"/>
+          <!-- Handscanner -->
+          <path d="M262 228 L276 178 L300 178 L292 228 Z" fill="#15241f"/>
+          <rect x="268" y="158" width="62" height="26" rx="8" fill="#15241f"/>
+          <path d="M330 166 L380 150 M330 176 L380 192" stroke="#e8c27a" stroke-width="2" opacity=".8"/>
+          <!-- Produkt mit Polybag -->
+          <rect x="380" y="150" width="96" height="78" rx="12" fill="#dbe8e3" stroke="#2f6f62" stroke-width="2"/>
+          <rect x="398" y="168" width="60" height="42" rx="4" fill="#fffdf8"/>
+          <path d="M404 180 H450 M404 190 H440 M404 200 H446" stroke="#c9bfa9" stroke-width="3"/>
+          <!-- Klebebandabroller -->
+          <path d="M520 228 L540 182 L620 182 L640 228 Z" fill="#59615b"/>
+          <circle cx="580" cy="178" r="30" fill="#e8c27a"/><circle cx="580" cy="178" r="13" fill="#ebe4d4"/>
+          <path d="M610 182 L640 178" stroke="#e8c27a" stroke-width="4"/>
+          <!-- Kartonstapel auf dem Tisch -->
+          <rect x="700" y="160" width="120" height="68" fill="#c8925a"/>
+          <rect x="752" y="160" width="16" height="68" fill="#e8c27a" opacity=".9"/>
+          <rect x="716" y="100" width="96" height="60" fill="#dcae78"/>
+          <rect x="756" y="100" width="16" height="60" fill="#e8c27a" opacity=".9"/>
+          <rect x="840" y="176" width="150" height="52" fill="#a8743f"/>
+          <rect x="858" y="188" width="44" height="26" fill="#fffdf8"/>
+          <g fill="#15241f"><rect x="864" y="194" width="2" height="12"/><rect x="868" y="194" width="1" height="12"/><rect x="871" y="194" width="3" height="12"/><rect x="877" y="194" width="1" height="12"/><rect x="880" y="194" width="2" height="12"/><rect x="885" y="194" width="1" height="12"/><rect x="888" y="194" width="3" height="12"/><rect x="894" y="194" width="1" height="12"/></g>
+        </svg>
+        <figcaption>Illustration · Packtisch: Etikettendrucker, Scanner, Polybag, Klebeband</figcaption>
+      </figure>
+    </div>
+  </section>
+
+  <!-- PREISE -->
+  <section id="preise" class="dark">
+    <div class="wrap">
+      <div class="sec-head">
+        <p class="mono">02 · Preise</p>
+        <h2>Eine Rechnung, die man auf einen Blick versteht</h2>
+        <p class="intro">Keine Einzelposition für jedes Etikett und jeden Handgriff. So ist Ihre Rechnung aufgebaut:</p>
+      </div>
+
+      <div class="price-grid">
+        <div class="invoice" aria-label="Beispielhafter Aufbau einer Rechnung">
+          <div class="inv-top"><span>Rechnung · Aufbau</span><span>RLE · Hörsching</span></div>
+          <table>
+            <thead><tr><th>Pos.</th><th>Leistung</th><th>Abrechnung</th></tr></thead>
+            <tbody>
+              <tr><td>01</td><td><strong>Bearbeitung je SKU</strong>Prep, Kontrolle, Etikettierung, Verpackung</td><td class="how">Staffelpreis je Einheit – je größer die Menge pro SKU, desto günstiger</td></tr>
+              <tr><td>02</td><td><strong>Versand- &amp; Zusatzmaterial</strong>Kartons, Füllmaterial, Polybags, Luftpolsterfolie</td><td class="how">zum Einkaufspreis, ohne Aufschlag – nur was tatsächlich verbraucht wird</td></tr>
+              <tr><td>03</td><td><strong>Versand</strong>an Amazon oder an Ihre Kunden</td><td class="how">Frachtkosten laut Tarif des Paketdienstes bzw. der Spedition</td></tr>
+              <tr><td>04</td><td><strong>Lagerung</strong>nur bei Shop-Fulfillment</td><td class="how">laut Angebot</td></tr>
+            </tbody>
+          </table>
+          <p class="inv-note">Ihre konkreten Staffelpreise stehen im Angebot, sobald wir Ihre Produkte und Mengen kennen.</p>
+        </div>
+
+        <div class="side">
+          <svg viewBox="0 0 320 170" role="img" aria-label="Schema: Preis je Einheit sinkt in Stufen mit steigender Menge je SKU">
+            <g fill="#e8c27a">
+              <rect x="30" y="20" width="62" height="120"/>
+              <rect x="104" y="52" width="62" height="88" opacity=".8"/>
+              <rect x="178" y="80" width="62" height="60" opacity=".62"/>
+              <rect x="252" y="102" width="62" height="38" opacity=".45"/>
+            </g>
+            <path d="M24 10 V140 H316" stroke="#b7c3bd" stroke-width="1.5" fill="none"/>
+            <text x="316" y="162" fill="#b7c3bd" font-family="Consolas, monospace" font-size="11" text-anchor="end">MENGE JE SKU →</text>
+            <text x="14" y="140" fill="#b7c3bd" font-family="Consolas, monospace" font-size="11" transform="rotate(-90 14 140)">PREIS / STK →</text>
+          </svg>
+          <h3>Staffelpreise je SKU</h3>
+          <p>Der Preis je Einheit sinkt mit der Menge, die Sie pro SKU anliefern. Diese Arbeiten sind darin bereits enthalten:</p>
+          <ul class="not-billed">
+            <li>Wareneingangskontrolle</li>
+            <li>FNSKU-Etikett aufbringen</li>
+            <li>Eintüten &amp; Warnhinweis anbringen</li>
+            <li>Meldung bei Abweichungen</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ABLAUF -->
+  <section id="ablauf" class="band">
+    <div class="wrap">
+      <div class="sec-head">
+        <p class="mono">03 · Ablauf</p>
+        <h2>Zwei Wege durch unser Lager</h2>
+      </div>
+      <div class="tracks">
+        <div class="track">
+          <h3>Amazon Prep</h3>
+          <p>Ware vom Lieferanten → FBA-fertig → Amazon</p>
+          <ol>
+            <li data-n="1"><strong>Anfrage &amp; Angebot</strong><span>Sie nennen uns Produkte und Mengen, wir schicken Ihnen Ihre Staffelpreise.</span></li>
+            <li data-n="2"><strong>Lieferung ankündigen</strong><span>Ihr Lieferant schickt die Ware direkt zu uns. Wir zählen und prüfen sie.</span></li>
+            <li data-n="3"><strong>Prep</strong><span>Etikettieren, umpacken, Bundles schnüren, Kartons nach Amazon-Vorgaben packen.</span></li>
+            <li data-n="4"><strong>Versand an Amazon</strong><span>Post, DPD, GLS oder UPS holen täglich bei uns ab, größere Mengen gehen per Spedition. Sie bekommen eine Rückmeldung.</span></li>
+          </ol>
+        </div>
+        <div class="track">
+          <h3>Shop-Fulfillment</h3>
+          <p>Ware einlagern → Bestellung → Paket beim Kunden</p>
+          <ol>
+            <li data-n="1"><strong>Anfrage &amp; Angebot</strong><span>Sortiment, erwartete Bestellungen pro Monat, Versandart.</span></li>
+            <li data-n="2"><strong>Einlagerung</strong><span>Wir erfassen Ihre Ware und lagern sie in unserem Lager ein.</span></li>
+            <li data-n="3"><strong>Bestellung</strong><span>Sie übermitteln uns Ihre Bestellungen, wir kommissionieren und packen.</span></li>
+            <li data-n="4"><strong>Versand an Ihre Kunden</strong><span>Post, DPD, GLS oder UPS holen täglich ab, Sie erhalten die Sendungsnummer.</span></li>
+          </ol>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- STANDORT -->
+  <section id="standort">
+    <div class="wrap">
+      <div class="loc-grid">
+        <div>
+          <div class="sec-head" style="grid-template-columns:1fr;gap:10px;margin-bottom:0">
+            <p class="mono">04 · Standort</p>
+            <h2>Hörsching, direkt an&nbsp;der&nbsp;B1</h2>
+          </div>
+          <p style="color:var(--muted);margin:18px 0 0">Unser Prep-Center liegt in Hörsching zwischen Wels und Linz, direkt an der B1 und gleich beim Flughafen Linz. Von hier geht Ware schnell auf die Autobahnen Richtung Deutschland, Salzburg und Wien.</p>
+          <ul class="loc-list">
+            <li><span class="mono">Abholung</span><span>Post, DPD, GLS und UPS holen täglich direkt am Prep-Center ab</span></li>
+            <li><span class="mono">B1</span><span>Wiener Straße zwischen Wels und Linz, direkt vor der Tür</span></li>
+            <li><span class="mono">A25 · A1</span><span>über den Knoten Haid Richtung Salzburg und Wien</span></li>
+            <li><span class="mono">A8</span><span>Innkreisautobahn Richtung Suben / Passau und weiter nach Deutschland</span></li>
+          </ul>
+        </div>
+        <figure>
+          <svg viewBox="0 0 560 400" role="img" aria-label="Schematische Karte: Prep-Center in Hörsching an der B1 zwischen Wels und Linz, mit den Autobahnen A1, A8 und A25">
+            <rect width="560" height="400" rx="10" fill="#ebe4d4"/>
+            <g stroke="#d9d0bd" stroke-width="1">
+              <path d="M0 80 H560 M0 160 H560 M0 240 H560 M0 320 H560 M112 0 V400 M224 0 V400 M336 0 V400 M448 0 V400"/>
+            </g>
+            <!-- Donau angedeutet -->
+            <path d="M0 60 C120 40 220 90 330 70 S500 40 560 70" fill="none" stroke="#b9d2ca" stroke-width="10" stroke-linecap="round"/>
+            <text x="20" y="44" fill="#6f8f86" font-family="Georgia, serif" font-style="italic" font-size="14">Donau</text>
+            <!-- B1 -->
+            <path d="M140 215 C200 222 250 226 300 222 S400 170 440 135" fill="none" stroke="#c8925a" stroke-width="5" stroke-linecap="round"/>
+            <!-- Autobahnen -->
+            <g fill="none" stroke="#15241f" stroke-width="6" stroke-linecap="round" stroke-linejoin="round">
+              <path d="M140 215 L90 160 L40 100"/>
+              <path d="M20 340 L160 315 L330 300 L540 300"/>
+              <path d="M140 215 L220 262 L330 300"/>
+            </g>
+            <!-- Schilder -->
+            <g font-family="Consolas, monospace" font-size="12" font-weight="700">
+              <rect x="56" y="122" width="32" height="20" rx="3" fill="#2f6f62"/><text x="72" y="136" text-anchor="middle" fill="#fff">A8</text>
+              <rect x="94" y="318" width="32" height="20" rx="3" fill="#2f6f62"/><text x="110" y="332" text-anchor="middle" fill="#fff">A1</text>
+              <rect x="196" y="262" width="40" height="20" rx="3" fill="#2f6f62"/><text x="216" y="276" text-anchor="middle" fill="#fff">A25</text>
+              <rect x="366" y="168" width="32" height="20" rx="3" fill="#c8925a"/><text x="382" y="182" text-anchor="middle" fill="#15241f">B1</text>
+            </g>
+            <!-- Richtungen -->
+            <g font-family="Consolas, monospace" font-size="11" fill="#59615b" letter-spacing="1">
+              <text x="40" y="88">→ PASSAU / DE</text>
+              <text x="20" y="364">← SALZBURG</text>
+              <text x="540" y="288" text-anchor="end">WIEN →</text>
+            </g>
+            <!-- Orte -->
+            <g font-family="Segoe UI, Arial, sans-serif" font-size="14" fill="#15241f">
+              <circle cx="140" cy="215" r="7"/><text x="128" y="244" text-anchor="end">Wels</text>
+              <circle cx="440" cy="135" r="7"/><text x="454" y="140">Linz</text>
+              <circle cx="330" cy="300" r="5" fill="#59615b"/><text x="330" y="326" text-anchor="middle" font-size="12" fill="#59615b">Knoten Haid</text>
+            </g>
+            <!-- Prep-Center Hörsching -->
+            <circle cx="300" cy="222" r="26" fill="#2f6f62" opacity=".18"/>
+            <circle cx="300" cy="222" r="10" fill="#2f6f62" stroke="#fffdf8" stroke-width="3"/>
+            <rect x="196" y="150" width="150" height="34" rx="4" fill="#15241f"/>
+            <path d="M290 184 L300 206 L310 184 Z" fill="#15241f"/>
+            <text x="206" y="166" fill="#e8c27a" font-family="Consolas, monospace" font-size="10" letter-spacing="1">PREP-CENTER</text>
+            <text x="206" y="179" fill="#fff" font-family="Segoe UI, Arial, sans-serif" font-size="13" font-weight="700">RLE · Hörsching</text>
+          </svg>
+          <figcaption>Schematische Darstellung, nicht maßstabsgetreu</figcaption>
+        </figure>
+      </div>
+    </div>
+  </section>
+
+  <!-- FAQ -->
+  <section id="faq" class="band">
+    <div class="wrap">
+      <div class="sec-head">
+        <p class="mono">05 · FAQ</p>
+        <h2>Häufige Fragen</h2>
+      </div>
+      <div class="faq">
+        <details><summary>Wie setzt sich der Preis zusammen?</summary><p>Aus einer Gebühr je bearbeiteter SKU nach Staffelpreisen, dem Versand- und Zusatzmaterial (Kartons, Füllmaterial, Polybags, Luftpolsterfolie) zum Einkaufspreis und den Frachtkosten für den Versand. Bei Shop-Fulfillment kommt die Lagerung laut Angebot dazu. Die Arbeit für Kontrolle, Etikettierung und Verpackung ist in der SKU-Gebühr enthalten, das Material wird separat zum Einkaufspreis verrechnet.</p></details>
+        <details><summary>Gibt es versteckte Kosten?</summary><p>Nein. Alle Positionen stehen vorab im Angebot. Zusätzliche Arbeiten, die nicht vereinbart waren, etwa das Aufbereiten beschädigter Ware, machen wir nur nach Rücksprache mit Ihnen.</p></details>
+        <details><summary>Muss ich Lieferungen vorher ankündigen?</summary><p>Bitte ja, vor allem bei größeren Mengen. Dann können wir Platz und Zeit einplanen und Ihre Ware zügig bearbeiten.</p></details>
+        <details><summary>Was passiert, wenn die Lieferung nicht stimmt?</summary><p>Weichen Menge oder Zustand von Ihrer Ankündigung ab, melden wir uns mit Fotos bei Ihnen, bevor wir weiterarbeiten.</p></details>
+        <details><summary>Kann ich die Ware direkt vom Lieferanten schicken lassen?</summary><p>Ja. Die Lieferadresse unseres Prep-Centers in Hörsching bekommen Sie mit dem Angebot. Geben Sie sie Ihrem Lieferanten an und kündigen Sie uns die Sendung an.</p></details>
+      </div>
+    </div>
+  </section>
+
+  <!-- KONTAKT -->
+  <section id="kontakt" class="dark">
+    <div class="wrap">
+      <div class="contact-grid">
+        <div class="contact-info">
+          <p class="mono" style="color:var(--tape);margin:0 0 12px">06 · Kontakt</p>
+          <h2 style="margin-bottom:16px">Schreiben Sie uns, was Sie verkaufen</h2>
+          <p>Je genauer Ihre Angaben zu Produkten, Mengen pro SKU und Zeitraum sind, desto schneller bekommen Sie ein Angebot mit Ihren Staffelpreisen.</p>
+          <dl>
+            <dt>E-Mail</dt><dd><a href="mailto:office@reindl-logistics.at">office@reindl-logistics.at</a></dd>
+            <dt>Erreichbar</dt><dd>persönlich, praktisch rund um die Uhr – auch abends und am Wochenende</dd>
+            <dt>Prep-Center</dt><dd>Hörsching, direkt an der B1</dd>
+            <dt>Firmensitz</dt><dd>Saphirstraße 5<br>4611 Buchkirchen<br>Österreich</dd>
+          </dl>
+        </div>
+
+        <form id="anfrage" action="https://api.web3forms.com/submit" method="POST">
+          <!-- TODO: Access Key von web3forms.com (registriert auf office@reindl-logistics.at) hier eintragen -->
+          <input type="hidden" name="access_key" value="DEIN_WEB3FORMS_ACCESS_KEY">
+          <input type="hidden" name="subject" value="Neue Anfrage über reindl-logistics.at">
+          <input type="hidden" name="from_name" value="Website reindl-logistics.at">
+          <input type="checkbox" name="botcheck" class="hp" tabindex="-1" autocomplete="off" aria-hidden="true">
+          <div class="row2">
+            <label>Name<input name="name" required autocomplete="name"></label>
+            <label>Firma (optional)<input name="company" autocomplete="organization"></label>
+          </div>
+          <label>E-Mail<input type="email" name="email" required autocomplete="email"></label>
+          <label>Ihre Nachricht<textarea name="message" required placeholder="z. B. 3 SKUs, je ca. 500 Stück, Lieferung aus China im März, Versand an Amazon DE"></textarea></label>
+          <p class="small">Ihre Angaben verwenden wir nur zur Bearbeitung Ihrer Anfrage. Details in der <a href="#datenschutz">Datenschutzerklärung</a>.</p>
+          <div><button class="btn" type="submit">Anfrage absenden</button></div>
+          <p class="form-status" id="form-status" role="status" aria-live="polite"></p>
+        </form>
+      </div>
+    </div>
+  </section>
+
+  <!-- RECHTLICHES -->
+  <section class="legal">
+    <div class="wrap legal-grid">
+      <div id="impressum">
+        <h2>Impressum</h2>
+        <p>Informationen gemäß § 5 ECG und Offenlegung gemäß § 25 MedienG</p>
+        <p><strong>Reindl Logistics Enterprise</strong><br>
+        Einzelunternehmen, Inhaber: Felix Reindl<br>
+        Saphirstraße 5, 4611 Buchkirchen, Österreich<br>
+        E-Mail: <a href="mailto:office@reindl-logistics.at">office@reindl-logistics.at</a></p>
+        <!-- Wortlaut bitte 1:1 aus dem GISA-Auszug übernehmen. UID-Nr. ergänzen, sobald vorhanden. -->
+        <p>Unternehmensgegenstand: Lagerung, Kommissionierung und Verpackung von Waren<br>
+        Mitglied der Wirtschaftskammer Oberösterreich<br>
+        Gewerbebehörde: Bezirkshauptmannschaft Wels-Land<br>
+        Anwendbare Rechtsvorschriften: Gewerbeordnung, abrufbar unter <a href="https://www.ris.bka.gv.at" rel="noopener">www.ris.bka.gv.at</a></p>
+        <p>Grundlegende Richtung der Website: Information über die Leistungen von Reindl Logistics Enterprise.</p>
+      </div>
+
+      <div id="datenschutz">
+        <h2>Datenschutzerklärung</h2>
+        <h3>Verantwortlicher</h3>
+        <p>Felix Reindl, Reindl Logistics Enterprise, Saphirstraße 5, 4611 Buchkirchen, office@reindl-logistics.at</p>
+        <h3>Hosting und Server-Logfiles</h3>
+        <!-- DPF-Zertifizierung von GitHub vor dem Livegang auf dataprivacyframework.gov prüfen. -->
+        <p>Diese Website wird über GitHub Pages bereitgestellt, einen Dienst der GitHub, Inc., 88 Colin P. Kelly Jr. Street, San Francisco, CA 94107, USA. Beim Aufruf der Seite verarbeitet GitHub technisch notwendige Daten (insbesondere Ihre IP-Adresse, Datum und Uhrzeit, aufgerufene Seite und Browsertyp), um die Seite auszuliefern und den sicheren Betrieb zu gewährleisten. Rechtsgrundlage ist unser berechtigtes Interesse (Art. 6 Abs. 1 lit. f DSGVO). Dabei werden Daten in die USA übermittelt. GitHub ist nach dem EU-US Data Privacy Framework zertifiziert, für die Übermittlung besteht damit ein Angemessenheitsbeschluss der EU-Kommission. Näheres in der Datenschutzerklärung von GitHub: <a href="https://docs.github.com/de/site-policy/privacy-policies/github-general-privacy-statement" rel="noopener">GitHub Privacy Statement</a>.</p>
+        <h3>Kontaktformular und E-Mail</h3>
+        <p>Wenn Sie uns schreiben, verarbeiten wir Ihre Angaben (Name, Firma, E-Mail, Nachricht), um Ihre Anfrage zu beantworten und gegebenenfalls ein Angebot zu erstellen (Art. 6 Abs. 1 lit. b DSGVO, sonst lit. f). Das Formular wird über den Dienst Web3Forms übermittelt, der die Nachricht per E-Mail an uns weiterleitet. Dabei kann eine Verarbeitung außerhalb der EU stattfinden. Wir bewahren Anfragen so lange auf, wie es für die Bearbeitung und gesetzliche Aufbewahrungspflichten nötig ist.</p>
+        <h3>Cookies und Tracking</h3>
+        <p>Diese Website setzt keine Cookies, lädt keine externen Schriften und verwendet keine Analyse- oder Tracking-Tools.</p>
+        <h3>Ihre Rechte</h3>
+        <p>Sie haben das Recht auf Auskunft, Berichtigung, Löschung, Einschränkung der Verarbeitung, Datenübertragbarkeit und Widerspruch. Beschwerden können Sie bei der österreichischen Datenschutzbehörde einbringen (<a href="https://www.dsb.gv.at" rel="noopener">dsb.gv.at</a>).</p>
+      </div>
+    </div>
+  </section>
+</main>
+
+<footer>
+  <div class="wrap">
+    <span>© <span id="y">2026</span> Reindl Logistics Enterprise · Prep-Center Hörsching, Oberösterreich</span>
+    <span><a href="#impressum">Impressum</a> · <a href="#datenschutz">Datenschutz</a></span>
+  </div>
+</footer>
+
+<script>
+  document.getElementById('y').textContent = new Date().getFullYear();
+
+  // Formular ohne Seitenwechsel absenden; ohne JavaScript funktioniert es weiterhin normal.
+  const form = document.getElementById('anfrage');
+  const status = document.getElementById('form-status');
+  form.addEventListener('submit', async (e) => {
+    e.preventDefault();
+    const btn = form.querySelector('button[type=submit]');
+    btn.disabled = true; status.className = 'form-status'; status.textContent = 'Wird gesendet …';
+    try {
+      const res = await fetch(form.action, {method:'POST', headers:{'Accept':'application/json'}, body:new FormData(form)});
+      const data = await res.json();
+      if (!res.ok || !data.success) throw new Error(data.message || 'Fehler');
+      form.reset();
+      status.className = 'form-status ok';
+      status.textContent = 'Danke! Ihre Anfrage ist bei uns angekommen. Wir melden uns per E-Mail.';
+    } catch (err) {
+      status.className = 'form-status err';
+      status.textContent = 'Das hat leider nicht geklappt. Bitte schreiben Sie uns direkt an office@reindl-logistics.at.';
+    } finally { btn.disabled = false; }
+  });
+</script>
+</body>
+</html>
