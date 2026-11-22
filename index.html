@@ -91,6 +91,18 @@
   .hero-fig svg{display:block;width:100%;height:auto}
   @media(max-width:860px){.hero-grid{grid-template-columns:1fr}.hero-fig{max-width:440px}}
 
+  .proof{background:var(--green-d);color:#e9efe9;padding:56px 0}
+  .proof-grid{display:grid;grid-template-columns:1.1fr 1.9fr;gap:48px;align-items:center}
+  .proof h2{color:#fff;font-size:clamp(26px,3vw,34px)}
+  .proof .mono{color:var(--tape);margin:0 0 12px}
+  .proof p.txt{color:#c9d6d0;margin:16px 0 0;max-width:46ch}
+  .stats{display:grid;grid-template-columns:repeat(3,1fr);gap:0;border-top:1px solid rgba(255,255,255,.25)}
+  .stats div{padding:18px 18px 4px 0}
+  .stats div + div{padding-left:18px;border-left:1px solid rgba(255,255,255,.18)}
+  .stats strong{display:block;font-family:var(--serif);font-size:clamp(34px,4.4vw,50px);line-height:1.05;color:var(--tape);font-weight:600}
+  .stats span{display:block;color:#c9d6d0;font-size:15px;margin-top:6px}
+  @media(max-width:860px){.proof-grid{grid-template-columns:1fr;gap:28px}}
+  @media(max-width:560px){.stats{grid-template-columns:1fr}.stats div + div{padding-left:0;border-left:0;border-top:1px solid rgba(255,255,255,.18)}}
   .facts{display:grid;grid-template-columns:repeat(3,1fr);margin-top:56px;border-top:1px solid var(--ink)}
   .facts div{padding:18px 22px 22px 0}
   .facts div + div{padding-left:22px;border-left:1px solid var(--line)}
@@ -330,6 +342,22 @@
     </div>
   </section>
 
+  <!-- ERFAHRUNG -->
+  <section class="proof" aria-labelledby="erfahrung-titel">
+    <div class="wrap proof-grid">
+      <div>
+        <p class="mono">Erfahrung aus eigener Praxis</p>
+        <h2 id="erfahrung-titel">Wir verkaufen selbst auf Amazon, seit 2017.</h2>
+        <p class="txt">Deshalb wissen wir aus eigener Erfahrung, was Amazon für einen reibungslosen Wareneingang braucht: richtige Etiketten, passende Kartons, saubere Sendungen. Damit Ihre Ware schnell verkaufsbereit ist und nicht im Wareneingang hängen bleibt.</p>
+      </div>
+      <div class="stats">
+        <div><strong>seit 2017</strong><span>selbst Verkäufer auf Amazon</span></div>
+        <div><strong>700.000+</strong><span>Produkte an Amazon versendet</span></div>
+        <div><strong>fast 10</strong><span>Jahre Erfahrung im Amazon-Geschäft</span></div>
+      </div>
+    </div>
+  </section>
+
   <!-- LEISTUNGEN -->
   <section id="leistungen">
     <div class="wrap">
@@ -351,8 +379,8 @@
           <span class="num">02</span>
           <h3>Versand an Amazon</h3>
           <div>
-            <p>Wir packen die Kartons nach Amazon-Vorgaben, etikettieren sie und übergeben sie an den Paketdienst oder die Spedition, die zum Logistikzentrum fährt. Wir sind an das Amazon Partnered Carrier Programm angebunden: Die UPS-Versandetiketten werden direkt über Ihr Amazon-Konto erstellt, zu den Konditionen von Amazon und ohne eigenen Vertrag mit UPS. Der UPS-Hub am Flughafen Linz ist nur wenige Kilometer entfernt, deshalb sind die Pakete meist schon am nächsten Tag in Deutschland.</p>
-            <ul class="tags"><li>Amazon Partnered Carrier (UPS)</li><li>Kartonetiketten</li><li>Gewichtsgrenzen</li><li>Paket oder Palette</li><li>tägliche Abholung</li><li>UPS-Hub in der Nähe</li></ul>
+            <p>Wir packen die Kartons nach Amazon-Vorgaben, etikettieren sie und übergeben sie an den Paketdienst oder die Spedition, die zum Logistikzentrum fährt. Wir sind an das Amazon Partnered Carrier Programm angebunden: Die UPS-Versandetiketten werden direkt über Ihr Amazon-Konto erstellt, zu den Konditionen von Amazon und ohne eigenen Vertrag mit UPS. Palettensendungen an Amazon machen wir genauso regelmäßig. Der UPS-Hub am Flughafen Linz ist nur wenige Kilometer entfernt, deshalb sind die Pakete meist schon am nächsten Tag in Deutschland.</p>
+            <ul class="tags"><li>Amazon Partnered Carrier (UPS)</li><li>Kartonetiketten</li><li>Gewichtsgrenzen</li><li>Paket oder Palette (LTL)</li><li>tägliche Abholung</li><li>UPS-Hub in der Nähe</li></ul>
           </div>
         </li>
         <li>
@@ -495,7 +523,7 @@
           <p>Ware vom Lieferanten → FBA-fertig → Amazon</p>
           <ol>
             <li data-n="1"><strong>Anfrage &amp; Angebot</strong><span>Sie nennen uns Produkte und Mengen, wir schicken Ihnen Ihre Staffelpreise.</span></li>
-            <li data-n="2"><strong>Lieferung im Kundenportal anmelden</strong><span>Sie melden die Anlieferung direkt in unserem Kundenportal an, ohne E-Mails und PDFs hin und her. Ihr Lieferant schickt die Ware zu uns, wir zählen und prüfen sie.</span></li>
+            <li data-n="2"><strong>Lieferung im Kundenportal anmelden</strong><span>Sie melden die Anlieferung direkt in unserem Kundenportal an, ohne E-Mails und PDFs hin und her. Ihr Lieferant schickt die Ware zu uns, als Paket oder auf Palette, und wir zählen und prüfen sie.</span></li>
             <li data-n="3"><strong>Prep</strong><span>Etikettieren, umpacken, Bundles schnüren, Kartons nach Amazon-Vorgaben packen.</span></li>
             <li data-n="4"><strong>Versand an Amazon</strong><span>Über das Amazon Partnered Carrier Programm werden die UPS-Etiketten in Ihrem Amazon-Konto erstellt. UPS holt täglich bei uns ab, größere Mengen gehen per Spedition. Sie bekommen eine Rückmeldung.</span></li>
           </ol>
@@ -601,6 +629,7 @@
         <details><summary>Lohnt sich das auch für kleine Mengen?</summary><p>Ja. Unsere Staffelpreise beginnen bei 0,45&nbsp;€ je Einheit zzgl. USt., und wir arbeiten bewusst auch mit kleinen Unternehmen und Einsteigern. Je größer die Menge pro SKU, desto günstiger wird es. Ihren genauen Preis nennen wir Ihnen im Angebot.</p></details>
         <details><summary>Brauche ich einen eigenen Vertrag mit UPS für den Versand an Amazon?</summary><p>Nein. Wir sind an das Amazon Partnered Carrier Programm angebunden. Die UPS-Versandetiketten werden direkt über Ihr Amazon-Konto zu den Konditionen von Amazon erstellt und dort abgerechnet. UPS holt die Sendungen täglich bei uns ab.</p></details>
         <details><summary>Gibt es versteckte Kosten oder eine Grundgebühr?</summary><p>Nein. Es gibt keine monatliche Grundgebühr, verrechnet wird nur, was Sie tatsächlich in Anspruch nehmen. Alle Positionen stehen vorab im Angebot. Zusätzliche Arbeiten, die nicht vereinbart waren, etwa das Aufbereiten beschädigter Ware, machen wir nur nach Rücksprache mit Ihnen.</p></details>
+        <details><summary>Kann ich auf Palette anliefern, und gehen auch Paletten an Amazon?</summary><p>Ja, beides. Palettenanlieferungen bei uns sind kein Problem, und Palettensendungen an die Amazon-Logistikzentren machen wir regelmäßig. Melden Sie die Anlieferung einfach im Kundenportal an.</p></details>
         <details><summary>Wie kündige ich eine Lieferung an?</summary><p>Über unser Kundenportal. Wir arbeiten mit der Prep-Software PrepBusiness, und Sie bekommen dort mit Beginn der Zusammenarbeit einen eigenen Zugang. Darin melden Sie Ihre Anlieferungen mit Produkten und Mengen direkt an. Listen per E-Mail oder PDF sind nicht nötig. Bitte melden Sie Lieferungen vorab an, vor allem größere Mengen, damit wir Platz und Zeit einplanen können.</p></details>
         <details><summary>Was passiert, wenn die Lieferung nicht stimmt?</summary><p>Weichen Menge oder Zustand von Ihrer Ankündigung ab, melden wir uns mit Fotos bei Ihnen, bevor wir weiterarbeiten.</p></details>
         <details><summary>Kann ich die Ware direkt vom Lieferanten schicken lassen?</summary><p>Ja. Die Lieferadresse unseres Prep-Centers in Hörsching bekommen Sie mit dem Angebot. Geben Sie sie Ihrem Lieferanten an und melden Sie die Sendung im Kundenportal an.</p></details>
