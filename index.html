@@ -163,7 +163,8 @@
   .calc{background:rgba(255,255,255,.06);border:1px solid rgba(255,255,255,.14);border-radius:8px;padding:22px;margin-bottom:26px}
   .calc h3{margin:0 0 8px}
   .side .calc-intro{font-size:14px;margin:0 0 14px}
-  .side .calc-breakdown{font-family:var(--mono);font-size:12px;color:#b7c3bd;margin:10px 0 0}
+  .side .calc-breakdown{font-family:var(--mono);font-size:12px;color:#b7c3bd;margin:10px 0 0;line-height:1.7}
+  .calc-breakdown span{white-space:nowrap}
   .tiers{list-style:none;margin:0 0 18px;padding:0;display:grid;grid-template-columns:repeat(3,1fr);gap:6px}
   .tiers li{border:1px solid rgba(255,255,255,.18);border-radius:6px;padding:8px 10px;display:grid;gap:2px;transition:background .15s,border-color .15s}
   .tiers span{font-family:var(--mono);font-size:11px;color:#b7c3bd;white-space:nowrap}
@@ -754,7 +755,7 @@
     const range=document.getElementById('qty'), num=document.getElementById('qty-num'), over=document.getElementById('oversize');
     const outUnit=document.getElementById('out-unit'), outTotal=document.getElementById('out-total'), outBreak=document.getElementById('out-breakdown');
     const tierEls=[...document.querySelectorAll('.tiers li')];
-    const eur={format:v=>v.toLocaleString('de-AT',{minimumFractionDigits:2,maximumFractionDigits:2})+' €'};
+    const eur={format:v=>v.toLocaleString('de-DE',{minimumFractionDigits:2,maximumFractionDigits:2})+' €'};
     function update(q){
       q=Math.max(1,Math.min(100000,Math.round(Number(q)||1)));
       // Durchgestaffelt: jede Stufe gilt nur für die Stücke in ihrem Bereich.
@@ -762,12 +763,12 @@
       let total=0;
       BANDS.forEach(b=>{
         const n=Math.max(0,Math.min(q,b.to)-b.from+1);
-        if(n>0){ total+=n*(b.price+add); parts.push(n.toLocaleString('de-AT')+' × '+eur.format(b.price+add)); }
+        if(n>0){ total+=n*(b.price+add); parts.push(n.toLocaleString('de-DE')+' × '+eur.format(b.price+add)); }
       });
       total=Math.round(total*100)/100;
       outUnit.textContent=eur.format(Math.round(total/q*100)/100);
       outTotal.textContent=eur.format(total);
-      outBreak.textContent=parts.join(' + ');
+      outBreak.replaceChildren(...parts.flatMap((t,i)=>{const sp=document.createElement('span');sp.textContent=t;return i?[' + ',sp]:[sp];}));
       tierEls.forEach(el=>el.classList.toggle('on',q>=Math.max(1,Number(el.dataset.min))));
       return q;
     }
