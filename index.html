@@ -161,7 +161,9 @@
   .side p{color:#b7c3bd;margin:0 0 18px}
   .side svg{display:block;width:100%;height:auto;margin-bottom:18px}
   .calc{background:rgba(255,255,255,.06);border:1px solid rgba(255,255,255,.14);border-radius:8px;padding:22px;margin-bottom:26px}
-  .calc h3{margin:0 0 14px}
+  .calc h3{margin:0 0 8px}
+  .side .calc-intro{font-size:14px;margin:0 0 14px}
+  .side .calc-breakdown{font-family:var(--mono);font-size:12px;color:#b7c3bd;margin:10px 0 0}
   .tiers{list-style:none;margin:0 0 18px;padding:0;display:grid;grid-template-columns:repeat(3,1fr);gap:6px}
   .tiers li{border:1px solid rgba(255,255,255,.18);border-radius:6px;padding:8px 10px;display:grid;gap:2px;transition:background .15s,border-color .15s}
   .tiers span{font-family:var(--mono);font-size:11px;color:#b7c3bd;white-space:nowrap}
@@ -467,7 +469,7 @@
           <table>
             <thead><tr><th>Pos.</th><th>Leistung</th><th>Abrechnung</th></tr></thead>
             <tbody>
-              <tr><td>01</td><td><strong>Bearbeitung je SKU</strong>Prep, Kontrolle, Etikettierung, Verpackung</td><td class="how">Staffelpreis je Einheit: 1–49 Stk. 0,80&nbsp;€, 50–99 Stk. 0,65&nbsp;€, ab 100 Stk. 0,45&nbsp;€. Übergröße +1,00&nbsp;€ je Stück</td></tr>
+              <tr><td>01</td><td><strong>Bearbeitung je SKU</strong>Prep, Kontrolle, Etikettierung, Verpackung</td><td class="how">Durchgestaffelt je SKU: Stück 1–49 je 0,75&nbsp;€, Stück 50–99 je 0,65&nbsp;€, ab Stück 100 je 0,45&nbsp;€. Übergröße +1,00&nbsp;€ je Stück</td></tr>
               <tr><td>02</td><td><strong>Versand- &amp; Zusatzmaterial</strong>Kartons, Füllmaterial, Polybags, Luftpolsterfolie</td><td class="how">zum Einkaufspreis, ohne Aufschlag – nur was tatsächlich verbraucht wird</td></tr>
               <tr><td>03</td><td><strong>Versand</strong>an Amazon oder an Ihre Kunden</td><td class="how">An Amazon: UPS-Etiketten über Ihr Amazon-Konto (Partnered Carrier Programm). Sonst laut Tarif des Paketdienstes bzw. der Spedition</td></tr>
               <tr><td>04</td><td><strong>Direktversand (FBM)</strong>Bestellungen an Ihre Kunden</td><td class="how">ab 3,60&nbsp;€ je Paket, zzgl. Karton und Versandkosten</td></tr>
@@ -480,10 +482,11 @@
         <div class="side">
           <div class="calc" id="rechner">
             <h3>Was kostet das Preppen?</h3>
-            <ol class="tiers" aria-label="Staffelpreise je Einheit, Standardgröße">
-              <li data-min="0"><span>1–49 Stk.</span><b>0,80&nbsp;€</b></li>
-              <li data-min="50"><span>50–99 Stk.</span><b>0,65&nbsp;€</b></li>
-              <li data-min="100"><span>ab 100 Stk.</span><b>0,45&nbsp;€</b></li>
+            <p class="calc-intro">Durchgestaffelt: Die ersten 49 Stück je SKU kosten 0,75&nbsp;€, die nächsten 50 Stück 0,65&nbsp;€, jedes weitere Stück nur noch 0,45&nbsp;€.</p>
+            <ol class="tiers" aria-label="Durchgestaffelte Preise je Einheit, Standardgröße">
+              <li data-min="0"><span>Stück 1–49</span><b>0,75&nbsp;€</b></li>
+              <li data-min="50"><span>Stück 50–99</span><b>0,65&nbsp;€</b></li>
+              <li data-min="100"><span>ab Stück 100</span><b>0,45&nbsp;€</b></li>
             </ol>
             <div class="calc-ui" hidden>
               <label class="qty-label" for="qty">Stück je SKU
@@ -492,9 +495,10 @@
               <input type="range" id="qty" min="1" max="500" value="120" aria-describedby="calc-result">
               <label class="oversize"><input type="checkbox" id="oversize"> Übergröße (nicht boxable): +1,00&nbsp;€ je Stück</label>
               <div class="calc-result" id="calc-result" aria-live="polite">
-                <div><span class="mono">Je Einheit</span><strong id="out-unit">0,45 €</strong></div>
-                <div><span class="mono">Prep gesamt</span><strong id="out-total">54,00 €</strong></div>
+                <div><span class="mono">Ø je Einheit</span><strong id="out-unit">0,66 €</strong></div>
+                <div><span class="mono">Prep gesamt</span><strong id="out-total">78,70 €</strong></div>
               </div>
+              <p class="calc-breakdown" id="out-breakdown"></p>
             </div>
             <p class="calc-note">Unverbindliche Beispielrechnung, netto zzgl. USt., zzgl. Material und Versand.</p>
           </div>
@@ -741,23 +745,30 @@
       status.textContent = 'Das hat leider nicht geklappt. Bitte rufen Sie uns an (+43 660 5720057) oder schreiben Sie an office@reindl-logistics.at.';
     } finally { btn.disabled = false; }
   });
-  // Preisrechner: Staffelpreise je Einheit (Standardgröße), Zuschlag für Übergröße.
+  // Preisrechner: durchgestaffelte Preise je Einheit (Standardgröße), Zuschlag für Übergröße.
   (function(){
-    const TIERS=[{min:100,price:0.45},{min:50,price:0.65},{min:0,price:0.80}];
+    const BANDS=[{from:1,to:49,price:0.75},{from:50,to:99,price:0.65},{from:100,to:Infinity,price:0.45}];
     const OVERSIZE=1.00;
     const ui=document.querySelector('.calc-ui'); if(!ui) return;
     ui.hidden=false;
     const range=document.getElementById('qty'), num=document.getElementById('qty-num'), over=document.getElementById('oversize');
-    const outUnit=document.getElementById('out-unit'), outTotal=document.getElementById('out-total');
+    const outUnit=document.getElementById('out-unit'), outTotal=document.getElementById('out-total'), outBreak=document.getElementById('out-breakdown');
     const tierEls=[...document.querySelectorAll('.tiers li')];
     const eur={format:v=>v.toLocaleString('de-AT',{minimumFractionDigits:2,maximumFractionDigits:2})+' €'};
     function update(q){
       q=Math.max(1,Math.min(100000,Math.round(Number(q)||1)));
-      const t=TIERS.find(t=>q>=t.min);
-      const unit=t.price+(over.checked?OVERSIZE:0);
-      outUnit.textContent=eur.format(unit);
-      outTotal.textContent=eur.format(Math.round(unit*q*100)/100);
-      tierEls.forEach(el=>el.classList.toggle('on',Number(el.dataset.min)===t.min));
+      // Durchgestaffelt: jede Stufe gilt nur für die Stücke in ihrem Bereich.
+      const add=over.checked?OVERSIZE:0, parts=[];
+      let total=0;
+      BANDS.forEach(b=>{
+        const n=Math.max(0,Math.min(q,b.to)-b.from+1);
+        if(n>0){ total+=n*(b.price+add); parts.push(n.toLocaleString('de-AT')+' × '+eur.format(b.price+add)); }
+      });
+      total=Math.round(total*100)/100;
+      outUnit.textContent=eur.format(Math.round(total/q*100)/100);
+      outTotal.textContent=eur.format(total);
+      outBreak.textContent=parts.join(' + ');
+      tierEls.forEach(el=>el.classList.toggle('on',q>=Math.max(1,Number(el.dataset.min))));
       return q;
     }
     range.addEventListener('input',()=>{num.value=range.value;update(range.value)});
