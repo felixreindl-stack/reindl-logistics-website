@@ -52,6 +52,11 @@
   h1 em{font-style:italic;color:var(--green)}
   .lead{font-size:19px;color:var(--muted);max-width:50ch;margin:0 0 30px}
   .cta{display:flex;flex-wrap:wrap;gap:22px;align-items:center}
+  .hero-price{margin:26px 0 0;display:flex;flex-wrap:wrap;align-items:baseline;gap:4px 12px;color:var(--muted);font-size:15px}
+  .hero-price strong{font-family:var(--serif);font-size:30px;color:var(--ink);font-weight:600}
+  .hero-price .mono{color:var(--green)}
+  .side .big{font-family:var(--serif);color:var(--tape)}
+  a[href^="tel:"]{white-space:nowrap}
   .btn{display:inline-block;background:var(--green);color:#fff;padding:14px 24px;border-radius:6px;text-decoration:none;font-weight:600;border:0;font-size:16px;font-family:var(--sans);cursor:pointer;box-shadow:0 2px 0 var(--green-d)}
   .btn:hover{background:var(--green-d)}
   .textlink{color:var(--ink);font-weight:600;text-decoration:none;border-bottom:2px solid var(--tape)}
@@ -206,12 +211,13 @@
       <div class="hero-grid">
         <div>
           <p class="kicker mono">Amazon Prep &amp; Fulfillment · Oberösterreich</p>
-          <h1>Ihre Ware kommt bei uns an. <em>Bei Amazon kommt sie richtig an.</em></h1>
+          <h1>Wir machen Ihre Ware <em>bereit für Amazon.</em></h1>
           <p class="lead">Wir etikettieren, prüfen und packen Ihre Ware um und schicken sie an die Amazon-Logistikzentren. Für Ihren eigenen Onlineshop lagern wir sie und versenden die Bestellungen direkt an Ihre Kunden.</p>
           <div class="cta">
             <a class="btn" href="#kontakt">Angebot anfragen</a>
             <a class="textlink" href="#preise">So rechnen wir ab →</a>
           </div>
+          <p class="hero-price"><span class="mono">Staffelpreise ab</span><strong>0,45&nbsp;€</strong><span>je Einheit · auch für kleine Händler und Einsteiger</span></p>
         </div>
 
         <!-- Illustration: Karton mit FBA-Etikett und Prüfstempel -->
@@ -301,8 +307,8 @@
           <span class="num">02</span>
           <h3>Versand an Amazon</h3>
           <div>
-            <p>Wir packen die Kartons nach Amazon-Vorgaben, etikettieren sie und übergeben sie an den Paketdienst oder die Spedition, die zum Logistikzentrum fährt.</p>
-            <ul class="tags"><li>Kartonetiketten</li><li>Gewichtsgrenzen</li><li>Paket oder Palette</li><li>tägliche Abholung</li></ul>
+            <p>Wir packen die Kartons nach Amazon-Vorgaben, etikettieren sie und übergeben sie an den Paketdienst oder die Spedition, die zum Logistikzentrum fährt. Wir sind an das Amazon Partnered Carrier Programm angebunden: Die UPS-Versandetiketten werden direkt über Ihr Amazon-Konto erstellt, zu den Konditionen von Amazon und ohne eigenen Vertrag mit UPS.</p>
+            <ul class="tags"><li>Amazon Partnered Carrier (UPS)</li><li>Kartonetiketten</li><li>Gewichtsgrenzen</li><li>Paket oder Palette</li><li>tägliche Abholung</li></ul>
           </div>
         </li>
         <li>
@@ -380,7 +386,7 @@
       <div class="sec-head">
         <p class="mono">02 · Preise</p>
         <h2>Eine Rechnung, die man auf einen Blick versteht</h2>
-        <p class="intro">Keine Einzelposition für jedes Etikett und jeden Handgriff. So ist Ihre Rechnung aufgebaut:</p>
+        <p class="intro">Staffelpreise ab 0,45&nbsp;€ je Einheit, auch für kleine Unternehmen. Keine Einzelposition für jedes Etikett und jeden Handgriff. So ist Ihre Rechnung aufgebaut:</p>
       </div>
 
       <div class="price-grid">
@@ -389,9 +395,9 @@
           <table>
             <thead><tr><th>Pos.</th><th>Leistung</th><th>Abrechnung</th></tr></thead>
             <tbody>
-              <tr><td>01</td><td><strong>Bearbeitung je SKU</strong>Prep, Kontrolle, Etikettierung, Verpackung</td><td class="how">Staffelpreis je Einheit – je größer die Menge pro SKU, desto günstiger</td></tr>
+              <tr><td>01</td><td><strong>Bearbeitung je SKU</strong>Prep, Kontrolle, Etikettierung, Verpackung</td><td class="how">Staffelpreis ab 0,45&nbsp;€ je Einheit – je größer die Menge pro SKU, desto günstiger</td></tr>
               <tr><td>02</td><td><strong>Versand- &amp; Zusatzmaterial</strong>Kartons, Füllmaterial, Polybags, Luftpolsterfolie</td><td class="how">zum Einkaufspreis, ohne Aufschlag – nur was tatsächlich verbraucht wird</td></tr>
-              <tr><td>03</td><td><strong>Versand</strong>an Amazon oder an Ihre Kunden</td><td class="how">Frachtkosten laut Tarif des Paketdienstes bzw. der Spedition</td></tr>
+              <tr><td>03</td><td><strong>Versand</strong>an Amazon oder an Ihre Kunden</td><td class="how">An Amazon: UPS-Etiketten über Ihr Amazon-Konto (Partnered Carrier Programm). Sonst laut Tarif des Paketdienstes bzw. der Spedition</td></tr>
               <tr><td>04</td><td><strong>Lagerung</strong>nur bei Shop-Fulfillment</td><td class="how">laut Angebot</td></tr>
             </tbody>
           </table>
@@ -406,12 +412,13 @@
               <rect x="178" y="80" width="62" height="60" opacity=".62"/>
               <rect x="252" y="102" width="62" height="38" opacity=".45"/>
             </g>
+            <text x="283" y="94" fill="#e8c27a" font-family="Georgia, serif" font-size="15" font-weight="700" text-anchor="middle">ab 0,45 €</text>
             <path d="M24 10 V140 H316" stroke="#b7c3bd" stroke-width="1.5" fill="none"/>
             <text x="316" y="162" fill="#b7c3bd" font-family="Consolas, monospace" font-size="11" text-anchor="end">MENGE JE SKU →</text>
             <text x="14" y="140" fill="#b7c3bd" font-family="Consolas, monospace" font-size="11" transform="rotate(-90 14 140)">PREIS / STK →</text>
           </svg>
-          <h3>Staffelpreise je SKU</h3>
-          <p>Der Preis je Einheit sinkt mit der Menge, die Sie pro SKU anliefern. Diese Arbeiten sind darin bereits enthalten:</p>
+          <h3>Staffelpreise ab <span class="big">0,45&nbsp;€</span> je Einheit</h3>
+          <p>Der Preis je Einheit sinkt mit der Menge, die Sie pro SKU anliefern. Auch kleine Mengen sind willkommen. Diese Arbeiten sind bereits enthalten:</p>
           <ul class="not-billed">
             <li>Wareneingangskontrolle</li>
             <li>FNSKU-Etikett aufbringen</li>
@@ -438,7 +445,7 @@
             <li data-n="1"><strong>Anfrage &amp; Angebot</strong><span>Sie nennen uns Produkte und Mengen, wir schicken Ihnen Ihre Staffelpreise.</span></li>
             <li data-n="2"><strong>Lieferung im Kundenportal anmelden</strong><span>Sie melden die Anlieferung direkt in unserem Kundenportal an, ohne E-Mails und PDFs hin und her. Ihr Lieferant schickt die Ware zu uns, wir zählen und prüfen sie.</span></li>
             <li data-n="3"><strong>Prep</strong><span>Etikettieren, umpacken, Bundles schnüren, Kartons nach Amazon-Vorgaben packen.</span></li>
-            <li data-n="4"><strong>Versand an Amazon</strong><span>Post, DPD, GLS oder UPS holen täglich bei uns ab, größere Mengen gehen per Spedition. Sie bekommen eine Rückmeldung.</span></li>
+            <li data-n="4"><strong>Versand an Amazon</strong><span>Über das Amazon Partnered Carrier Programm werden die UPS-Etiketten in Ihrem Amazon-Konto erstellt. UPS holt täglich bei uns ab, größere Mengen gehen per Spedition. Sie bekommen eine Rückmeldung.</span></li>
           </ol>
         </div>
         <div class="track">
@@ -531,6 +538,8 @@
       </div>
       <div class="faq">
         <details><summary>Wie setzt sich der Preis zusammen?</summary><p>Aus einer Gebühr je bearbeiteter SKU nach Staffelpreisen, dem Versand- und Zusatzmaterial (Kartons, Füllmaterial, Polybags, Luftpolsterfolie) zum Einkaufspreis und den Frachtkosten für den Versand. Bei Shop-Fulfillment kommt die Lagerung laut Angebot dazu. Die Arbeit für Kontrolle, Etikettierung und Verpackung ist in der SKU-Gebühr enthalten, das Material wird separat zum Einkaufspreis verrechnet.</p></details>
+        <details><summary>Lohnt sich das auch für kleine Mengen?</summary><p>Ja. Unsere Staffelpreise beginnen bei 0,45&nbsp;€ je Einheit, und wir arbeiten bewusst auch mit kleinen Unternehmen und Einsteigern. Je größer die Menge pro SKU, desto günstiger wird es. Ihren genauen Preis nennen wir Ihnen im Angebot.</p></details>
+        <details><summary>Brauche ich einen eigenen Vertrag mit UPS für den Versand an Amazon?</summary><p>Nein. Wir sind an das Amazon Partnered Carrier Programm angebunden. Die UPS-Versandetiketten werden direkt über Ihr Amazon-Konto zu den Konditionen von Amazon erstellt und dort abgerechnet. UPS holt die Sendungen täglich bei uns ab.</p></details>
         <details><summary>Gibt es versteckte Kosten?</summary><p>Nein. Alle Positionen stehen vorab im Angebot. Zusätzliche Arbeiten, die nicht vereinbart waren, etwa das Aufbereiten beschädigter Ware, machen wir nur nach Rücksprache mit Ihnen.</p></details>
         <details><summary>Wie kündige ich eine Lieferung an?</summary><p>Über unser Kundenportal. Wir arbeiten mit der Prep-Software PrepBusiness, und Sie bekommen dort mit Beginn der Zusammenarbeit einen eigenen Zugang. Darin melden Sie Ihre Anlieferungen mit Produkten und Mengen direkt an. Listen per E-Mail oder PDF sind nicht nötig. Bitte melden Sie Lieferungen vorab an, vor allem größere Mengen, damit wir Platz und Zeit einplanen können.</p></details>
         <details><summary>Was passiert, wenn die Lieferung nicht stimmt?</summary><p>Weichen Menge oder Zustand von Ihrer Ankündigung ab, melden wir uns mit Fotos bei Ihnen, bevor wir weiterarbeiten.</p></details>
